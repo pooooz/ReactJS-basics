@@ -1,6 +1,6 @@
-import './styles/App.css';
-import {FuncMessage} from './components/FuncMessage';
-import {ClassMessage} from "./components/ClassMessage";
+import './App.css';
+import {FuncMessage} from './components/FuncMessage/FuncMessage';
+import {ClassMessage} from "./components/ClassMessage/ClassMessage";
 
 function App() {
   return (
@@ -11,4 +11,6 @@ function App() {
   );
 }
 
-export default App;
+export {
+  App
+};
