@@ -1,15 +1,14 @@
+import React from 'react';
 import './App.css';
-import {ClassDialogue} from "./components/ClassDialogue/ClassDialogue";
-import {FuncDialogue} from "./components/FuncDialogue/FuncDialogue";
+import { ClassDialogue } from './components/ClassDialogue/ClassDialogue';
+import { FuncDialogue } from './components/FuncDialogue/FuncDialogue';
 function App() {
   return (
     <div className="App">
-      <ClassDialogue/>
-      <FuncDialogue/>
+      <ClassDialogue />
+      <FuncDialogue />
     </div>
   );
 }
 
-export {
-  App
-};
+export { App };
