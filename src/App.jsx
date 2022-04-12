@@ -1,12 +1,11 @@
 import './App.css';
-import {FuncMessage} from './components/FuncMessage/FuncMessage';
-import {ClassMessage} from "./components/ClassMessage/ClassMessage";
-
+import {ClassDialogue} from "./components/ClassDialogue/ClassDialogue";
+import {FuncDialogue} from "./components/FuncDialogue/FuncDialogue";
 function App() {
   return (
     <div className="App">
-      <FuncMessage message="Functional component!"/>
-      <ClassMessage message="Hello, class component!"/>
+      <ClassDialogue/>
+      <FuncDialogue/>
     </div>
   );
 }

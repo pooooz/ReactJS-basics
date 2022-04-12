@@ -3,7 +3,12 @@ $text-color: grey;
 .glitch {
     color: $text-color;
     position: relative;
-    margin: 0 auto;
+    margin: 3px auto;
+}
+
+.message {
+    margin: 20px 0 0 0;
+    word-wrap: break-word;
 }
 
 @keyframes noise-anim-2 {
