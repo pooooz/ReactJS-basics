@@ -15,7 +15,7 @@ export const FuncDialogue = () => {
   };
 
   const handleSubmit = (event) => {
-    if (inputValue !== '') {
+    if (inputValue) {
       setMessages([...messages, { text: inputValue, author: 'You' }]);
       setInputValue('');
       setBotMessageCounter(botMessageCounter + 1);

@@ -11,17 +11,15 @@ export class ClassDialogue extends React.Component {
       inputValue: '',
       botMessageCounter: 0,
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.timeout = null;
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({ inputValue: event.target.value });
-  }
+  };
 
-  handleSubmit(event) {
-    if (this.state.inputValue !== '') {
+  handleSubmit = (event) => {
+    if (this.state.inputValue) {
       this.state.messages.push({ text: this.state.inputValue, author: 'You' });
       this.setState({
         messages: this.state.messages,
@@ -30,7 +28,7 @@ export class ClassDialogue extends React.Component {
       });
     }
     event.preventDefault();
-  }
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.botMessageCounter !== prevState.botMessageCounter) {
