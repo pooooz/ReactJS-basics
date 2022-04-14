@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './ClassMessage.module.scss';
 
-export class ClassMessage extends Component {
+export class ClassMessage extends React.PureComponent {
   render() {
     return (
       <div className={styles.message}>

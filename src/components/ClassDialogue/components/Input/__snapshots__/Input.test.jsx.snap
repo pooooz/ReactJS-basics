@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClassInput Render with snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <input
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
