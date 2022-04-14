@@ -36,7 +36,7 @@ export class ClassDialogue extends React.Component {
       this.timeout = setTimeout(() => {
         this.state.messages.push({ text: '[BOT] Message', author: 'BOT' });
         this.setState({ messages: this.state.messages });
-      }, 1500);
+      }, 950);
     }
   }
 

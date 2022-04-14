@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FuncDialogue Forming a empty message 1`] = `
+<DocumentFragment>
+  <section>
+    <div>
+      <div>
+        <p
+          data-text="Initialization..."
+        >
+          Initialization...
+        </p>
+        <p
+          data-text="Author: <Admin>"
+        >
+          Author: &lt;Admin&gt;
+        </p>
+      </div>
+    </div>
+    <form>
+      <div>
+        <input
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`FuncDialogue Render with snapshot 1`] = `
+<DocumentFragment>
+  <section>
+    <div>
+      <div>
+        <p
+          data-text="Initialization..."
+        >
+          Initialization...
+        </p>
+        <p
+          data-text="Author: <Admin>"
+        >
+          Author: &lt;Admin&gt;
+        </p>
+      </div>
+    </div>
+    <form>
+      <div>
+        <input
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </section>
+</DocumentFragment>
+`;
