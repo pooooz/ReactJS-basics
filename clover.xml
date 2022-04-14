@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1649951165814" clover="3.2.0">
+  <project timestamp="1649951165814" name="All files">
+    <metrics statements="48" coveredstatements="48" conditionals="10" coveredconditionals="10" methods="20" coveredmethods="20" elements="78" coveredelements="78" complexity="0" loc="48" ncloc="48" packages="8" files="8" classes="8"/>
+    <package name="ClassDialogue">
+      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <file name="ClassDialogue.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\ClassDialogue\ClassDialogue.jsx">
+        <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="34" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="44" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="ClassDialogue.components.ClassMessageList">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="ClassMessageList.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\ClassDialogue\components\ClassMessageList\ClassMessageList.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="7" count="15" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
+      </file>
+    </package>
+    <package name="ClassDialogue.components.ClassMessageList.components.ClassMessage">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ClassMessage.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\ClassDialogue\components\ClassMessageList\components\ClassMessage\ClassMessage.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="ClassDialogue.components.Input">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Input.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\ClassDialogue\components\Input\Input.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="FuncDialogue">
+      <metrics statements="20" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+      <file name="FuncDialogue.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\FuncDialogue\FuncDialogue.jsx">
+        <metrics statements="20" coveredstatements="20" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="12" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="19" count="12" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="29" count="12" type="stmt"/>
+        <line num="30" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="41" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="FuncDialogue.components.FuncMessageList">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="FuncMessageList.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\FuncDialogue\components\FuncMessageList\FuncMessageList.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="11" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="FuncDialogue.components.FuncMessageList.components.FuncMessage">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="FuncMessage.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\FuncDialogue\components\FuncMessageList\components\FuncMessage\FuncMessage.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="FuncDialogue.components.Input">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Input.jsx" path="E:\Code\GeekBrains\ReactJS.Базовый курс\ReactJS-basics\src\components\FuncDialogue\components\Input\Input.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="17" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
