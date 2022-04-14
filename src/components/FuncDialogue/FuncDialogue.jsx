@@ -3,6 +3,8 @@ import styles from './FuncDialogue.module.scss';
 import { FuncMessageList } from './components/FuncMessageList/FuncMessageList';
 import { Input } from './components/Input/Input';
 
+const FuncMessageListPure = React.memo(FuncMessageList);
+
 export const FuncDialogue = () => {
   const [messages, setMessages] = useState([
     { text: 'Initialization...', author: 'Admin' },
@@ -31,14 +33,14 @@ export const FuncDialogue = () => {
     ) {
       const timeout = setTimeout(() => {
         setMessages([...messages, { text: '[BOT] Message', author: 'BOT' }]);
-      }, 1500);
+      }, 950);
       return () => clearTimeout(timeout);
     }
   }, [botMessageCounter, messages]);
 
   return (
     <section className={styles.dialogue}>
-      <FuncMessageList messages={messages} />
+      <FuncMessageListPure messages={messages} />
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input value={inputValue} change={handleChange} />
         <button className={styles.form__button} type="submit">
