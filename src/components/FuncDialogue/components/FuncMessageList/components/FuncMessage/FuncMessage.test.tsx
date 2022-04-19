@@ -5,16 +5,16 @@ import { FuncMessage } from './FuncMessage';
 
 describe('FuncMessage', () => {
   it('Render component', () => {
-    render(<FuncMessage />);
+    render(<FuncMessage message="Test" author="Test" />);
   });
 
   it('Render with snapshot', () => {
-    const { asFragment } = render(<FuncMessage />);
+    const { asFragment } = render(<FuncMessage message="Test" author="Test" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Render component with author', () => {
-    render(<FuncMessage author="Me" />);
+    render(<FuncMessage message="Test" author="Test" />);
     expect(screen.getByText(/Author: <\w*>/)).toBeInTheDocument();
   });
 });

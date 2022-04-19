@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './Input.module.scss';
 
-export const Input = (props) => {
+interface InputProps {
+  value: string;
+  change: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Input: FC<InputProps> = (props) => {
   return (
     <div className={styles.input_wrap}>
       <input
@@ -9,6 +14,7 @@ export const Input = (props) => {
         type="text"
         value={props.value}
         onChange={props.change}
+        autoFocus
       />
     </div>
   );

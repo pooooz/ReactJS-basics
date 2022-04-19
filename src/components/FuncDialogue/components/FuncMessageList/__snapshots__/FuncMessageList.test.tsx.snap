@@ -4,7 +4,11 @@ exports[`FuncMessageList Render with snapshot 1`] = `
 <DocumentFragment>
   <div>
     <div>
-      <p />
+      <p
+        data-text="Render"
+      >
+        Render
+      </p>
       <p
         data-text="Author: <Render>"
       >

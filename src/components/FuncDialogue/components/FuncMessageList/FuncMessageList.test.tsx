@@ -6,20 +6,20 @@ import { FuncMessageList } from './FuncMessageList';
 describe('FuncMessageList', () => {
   it('Render component', () => {
     render(
-      <FuncMessageList messages={[{ message: 'Render', author: 'Render' }]} />
+      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
     );
   });
 
   it('Render with snapshot', () => {
     const { asFragment } = render(
-      <FuncMessageList messages={[{ message: 'Render', author: 'Render' }]} />
+      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Render with text', () => {
     render(
-      <FuncMessageList messages={[{ message: 'Render', author: 'Render' }]} />
+      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
     );
     expect(screen.getByText(/Author: <\w*>/));
   });

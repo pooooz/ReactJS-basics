@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import '@testing-library/user-event';
 import { FuncDialogue } from './FuncDialogue';
@@ -46,6 +46,11 @@ describe('FuncDialogue', () => {
       target: { value: 'Test' },
     });
     fireEvent.click(screen.getByRole('button'));
-    expect(await screen.findByText(/\[BOT\] Message/)).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(screen.getByText(/\[BOT\] Message/)).toBeInTheDocument();
+      },
+      { timeout: 1600 }
+    );
   });
 });

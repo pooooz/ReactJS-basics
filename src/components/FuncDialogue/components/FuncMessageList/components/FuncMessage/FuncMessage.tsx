@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './FuncMessage.module.scss';
 
-export const FuncMessage = (props) => {
+interface FuncMessageProps {
+  message: string;
+  author: string;
+}
+
+export const FuncMessage: FC<FuncMessageProps> = (props) => {
   return (
     <div className={styles.message}>
       <p className={styles.glitch} data-text={props.message}>

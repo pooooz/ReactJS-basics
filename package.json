@@ -4,18 +4,39 @@
   "private": true,
   "homepage": "https://pooooz.github.io/ReactJS-basics/",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "style-loader": "^3.3.1"
+  },
+  "scripts": {
+    "start": "npx tsc && webpack serve --mode=development --open",
+    "build": "webpack --mode=production",
+    "lint": "npx tsc --noEmit && npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "predeploy": "npm run build",
+    "test": "tsc && jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
+    "deploy": "gh-pages -d build",
+    "deploy:coverage": "npm run test:coverage && gh-pages -d coverage/lcov-report"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
     "@testing-library/user-event": "^14.1.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
@@ -32,24 +53,20 @@
     "prettier": "^2.6.2",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
+    "typescript": "^4.6.3",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
-  },
-  "scripts": {
-    "start": "webpack serve --mode=development",
-    "build": "webpack --mode=production",
-    "lint": "npx eslint ./src --ext .js,.jsx --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint",
       "pre-push": "npm run lint && npm test"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,css,scss,sass}": [
+      "npm run lint"
+    ]
   }
 }
