@@ -1,16 +1,37 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+process.env.NODE_ENV === 'development';
+const withReport = process.env.npm_config_withReport;
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
     filename: 'bundle.js',
+    clean: true,
     path: path.resolve(__dirname, './build'),
+    environment: {
+      arrowFunction: false,
+    },
   },
   resolve: {
     extensions: ['.jsx', '.js', '.ts', '.tsx'],
   },
-  devtool: 'eval-source-map',
+  devtool:
+    process.env.NODE_ENV === 'production'
+      ? 'hidden-source-map'
+      : 'eval-source-map',
+  devServer: {
+    compress: true,
+    port: 8000,
+    client: {
+      logging: 'info',
+    },
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       { test: /\.(j|t)sx?$/, exclude: /node_modules/, use: ['babel-loader'] },
@@ -40,9 +61,15 @@ module.exports = {
       },
     ],
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
+    ...(withReport ? new BundleAnalyzerPlugin() : ''),
   ],
 };

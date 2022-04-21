@@ -3,9 +3,9 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Input } from './Input';
 
-const changeHandler = jest.fn();
-
 describe('FuncInput', () => {
+  const changeHandler = jest.fn();
+
   it('Render component', () => {
     render(<Input value="Render test" change={changeHandler} />);
   });
