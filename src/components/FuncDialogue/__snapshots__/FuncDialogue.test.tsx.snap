@@ -25,9 +25,15 @@ exports[`FuncDialogue Forming a empty message 1`] = `
         />
       </div>
       <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        style="width: 100px; font-family: Press Start 2P; color: rgba(50, 205, 50, 1);"
+        tabindex="0"
         type="submit"
       >
         Send
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
       </button>
     </form>
   </section>
@@ -59,9 +65,15 @@ exports[`FuncDialogue Render with snapshot 1`] = `
         />
       </div>
       <button
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        style="width: 100px; font-family: Press Start 2P; color: rgba(50, 205, 50, 1);"
+        tabindex="0"
         type="submit"
       >
         Send
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
       </button>
     </form>
   </section>

@@ -5,7 +5,7 @@ exports[`FuncInput Render with snapshot 1`] = `
   <div>
     <input
       type="text"
-      value=""
+      value="Test"
     />
   </div>
 </DocumentFragment>

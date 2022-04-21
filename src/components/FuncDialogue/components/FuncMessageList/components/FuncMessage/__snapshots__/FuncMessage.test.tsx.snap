@@ -3,11 +3,15 @@
 exports[`FuncMessage Render with snapshot 1`] = `
 <DocumentFragment>
   <div>
-    <p />
     <p
-      data-text="Author: <undefined>"
+      data-text="Test"
     >
-      Author: &lt;&gt;
+      Test
+    </p>
+    <p
+      data-text="Author: <Test>"
+    >
+      Author: &lt;Test&gt;
     </p>
   </div>
 </DocumentFragment>

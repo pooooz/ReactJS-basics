@@ -1,21 +1,21 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import '@testing-library/user-event';
-import { ClassDialogue } from './ClassDialogue';
+import { FuncDialogue } from './FuncDialogue';
 
-describe('ClassDialogue', () => {
+describe('FuncDialogue', () => {
   it('Render component', () => {
-    render(<ClassDialogue />);
+    render(<FuncDialogue />);
   });
 
   it('Render with snapshot', () => {
-    const { asFragment } = render(<ClassDialogue />);
+    const { asFragment } = render(<FuncDialogue />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Input test', () => {
-    render(<ClassDialogue />);
+    render(<FuncDialogue />);
     fireEvent.input(screen.getByRole('textbox'), {
       target: { value: 'Test' },
     });
@@ -23,7 +23,7 @@ describe('ClassDialogue', () => {
   });
 
   it('Forming a message', () => {
-    render(<ClassDialogue />);
+    render(<FuncDialogue />);
     fireEvent.input(screen.getByRole('textbox'), {
       target: { value: 'Test' },
     });
@@ -32,7 +32,7 @@ describe('ClassDialogue', () => {
   });
 
   it('Forming a empty message', () => {
-    const { asFragment } = render(<ClassDialogue />);
+    const { asFragment } = render(<FuncDialogue />);
     fireEvent.input(screen.getByRole('textbox'), {
       target: { value: '' },
     });
@@ -41,11 +41,16 @@ describe('ClassDialogue', () => {
   });
 
   it('Bot answer', async () => {
-    render(<ClassDialogue />);
+    render(<FuncDialogue />);
     fireEvent.input(screen.getByRole('textbox'), {
       target: { value: 'Test' },
     });
     fireEvent.click(screen.getByRole('button'));
-    expect(await screen.findByText(/\[BOT\] Message/)).toBeInTheDocument();
+    await waitFor(
+      () => {
+        expect(screen.getByText(/\[BOT\] Message/)).toBeInTheDocument();
+      },
+      { timeout: 1600 }
+    );
   });
 });
