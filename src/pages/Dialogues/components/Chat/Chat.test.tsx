@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import '@testing-library/user-event';
 import { Chat } from './Chat';
 
-import { MessageInterface } from '../../../../App';
+import { MessageInterface } from 'src/App';
 
 const initialMessages: MessageInterface[] = [
   {

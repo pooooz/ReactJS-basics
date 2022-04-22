@@ -1,23 +1,21 @@
 import React, { FC } from 'react';
 import { nanoid } from 'nanoid';
 
-import { Message } from './components/Message/Message';
+import { MessagePure } from './components/Message/Message';
 
-import { MessageInterface } from '../../../../../../App';
+import { MessageInterface } from 'src/App';
 
 import styles from './MessageList.module.scss';
 
-interface FuncMessageListProps {
+interface MessageListProps {
   messages: MessageInterface[];
 }
 
-const FuncMessagePure = React.memo(Message);
-
-export const MessageList: FC<FuncMessageListProps> = (props) => {
+export const MessageList: FC<MessageListProps> = (props) => {
   return (
     <div className={styles.message__list}>
       {props.messages.map((message) => (
-        <FuncMessagePure
+        <MessagePure
           message={message.value}
           author={message.author}
           key={nanoid()}
@@ -26,3 +24,5 @@ export const MessageList: FC<FuncMessageListProps> = (props) => {
     </div>
   );
 };
+
+export const MessageListPure = React.memo(MessageList);

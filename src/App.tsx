@@ -32,10 +32,8 @@ export const App: FC = () => {
         id: nanoid(),
         name: chat[0],
       })),
-    [messages]
+    [Object.entries(messages).length]
   );
-
-  console.log(chatList);
 
   const onAddChat = (chat: ChatInterface) => {
     if (!messages[chat.name]) {

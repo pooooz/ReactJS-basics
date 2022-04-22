@@ -2,10 +2,10 @@ import React, { useState, FC } from 'react';
 import { Button, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
-import { MessageList } from './components/MessageList/MessageList';
+import { MessageListPure } from './components/MessageList/MessageList';
 import { Input } from './components/Input/Input';
 
-import { MessageInterface } from '../../../../App';
+import { MessageInterface } from 'src/App';
 
 import styles from './Chat.module.scss';
 
@@ -15,14 +15,12 @@ const theme = createTheme({
   },
 });
 
-interface FuncDialogueProps {
+interface ChatProps {
   addMessage: (a: string) => void;
   messages: MessageInterface[];
 }
 
-const MessageListPure = React.memo(MessageList);
-
-export const Chat: FC<FuncDialogueProps> = (props) => {
+export const Chat: FC<ChatProps> = (props) => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

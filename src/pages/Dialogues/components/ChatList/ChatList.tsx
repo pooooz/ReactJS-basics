@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { nanoid } from 'nanoid';
 
-import { ChatInterface } from '../../../../App';
+import { ChatInterface } from 'src/App';
 
 import styles from './ChatList.module.scss';
 

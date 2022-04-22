@@ -2,12 +2,12 @@ import React, { FC } from 'react';
 
 import styles from './Message.module.scss';
 
-interface FuncMessageProps {
+interface MessageProps {
   message: string;
   author: string;
 }
 
-export const Message: FC<FuncMessageProps> = (props) => {
+export const Message: FC<MessageProps> = (props) => {
   return (
     <div className={styles.message}>
       <p className={styles.glitch} data-text={props.message}>
@@ -19,3 +19,5 @@ export const Message: FC<FuncMessageProps> = (props) => {
     </div>
   );
 };
+
+export const MessagePure = React.memo(Message);

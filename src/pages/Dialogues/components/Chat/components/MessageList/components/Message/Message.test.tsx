@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Message } from './Message';
 
-describe('FuncMessage', () => {
+describe('Message', () => {
   it('Render component', () => {
     render(<Message message="Test" author="Test" />);
   });

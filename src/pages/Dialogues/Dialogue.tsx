@@ -6,8 +6,8 @@ import { nanoid } from 'nanoid';
 import { Chat } from './components/Chat/Chat';
 import { ChatList } from './components/ChatList/ChatList';
 
-import { Messages } from '../../App';
-import { ChatInterface } from '../../App';
+import { Messages } from 'src/App';
+import { ChatInterface } from 'src/App';
 
 import styles from './Dialogue.module.scss';
 
@@ -64,7 +64,7 @@ export const Dialogue: FC<DialogueProps> = (props) => {
         }));
       }
     },
-    [chatId, props]
+    [chatId, props.setMessages]
   );
 
   if (!props.chatList.find((chat) => chat.name === chatId)) {

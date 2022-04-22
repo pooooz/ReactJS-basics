@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Input } from './Input';
 
-describe('FuncInput', () => {
+describe('Input', () => {
   const changeHandler = jest.fn();
 
   it('Render component', () => {
