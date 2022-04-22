@@ -1,0 +1,20 @@
+.sidebar {
+  min-height: 929px;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+  ul {
+    list-style: none;
+  }
+  background-color: rgba(46, 66, 7, 0.1);
+}
+
+.link {
+  color: limegreen;
+}
+
+.main {
+  width: 100%;
+  min-height: 929px;
+  display: flex;
+}

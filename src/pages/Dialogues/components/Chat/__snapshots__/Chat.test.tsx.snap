@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FuncDialogue Forming a empty message 1`] = `
+exports[`Chat Empty message test 1`] = `
 <DocumentFragment>
   <section>
     <div>
       <div>
         <p
-          data-text="Initialization..."
+          data-text="Test"
         >
-          Initialization...
+          Test
         </p>
         <p
-          data-text="Author: <Admin>"
+          data-text="Author: <Test>"
         >
-          Author: &lt;Admin&gt;
+          Author: &lt;Test&gt;
         </p>
       </div>
     </div>
@@ -40,20 +40,20 @@ exports[`FuncDialogue Forming a empty message 1`] = `
 </DocumentFragment>
 `;
 
-exports[`FuncDialogue Render with snapshot 1`] = `
+exports[`Chat Render with snapshot 1`] = `
 <DocumentFragment>
   <section>
     <div>
       <div>
         <p
-          data-text="Initialization..."
+          data-text="Test"
         >
-          Initialization...
+          Test
         </p>
         <p
-          data-text="Author: <Admin>"
+          data-text="Author: <Test>"
         >
-          Author: &lt;Admin&gt;
+          Author: &lt;Test&gt;
         </p>
       </div>
     </div>

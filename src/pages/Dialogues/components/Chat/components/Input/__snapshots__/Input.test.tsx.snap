@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FuncInput Render with snapshot 1`] = `
+exports[`Input Render with snapshot 1`] = `
 <DocumentFragment>
   <div>
     <input

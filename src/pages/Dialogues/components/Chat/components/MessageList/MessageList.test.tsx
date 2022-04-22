@@ -1,25 +1,31 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { FuncMessageList } from './FuncMessageList';
+import { MessageList } from './MessageList';
 
-describe('FuncMessageList', () => {
+describe('MessageList', () => {
   it('Render component', () => {
     render(
-      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
+      <MessageList
+        messages={[{ id: '1', value: 'Render', author: 'Render' }]}
+      />
     );
   });
 
   it('Render with snapshot', () => {
     const { asFragment } = render(
-      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
+      <MessageList
+        messages={[{ id: '1', value: 'Render', author: 'Render' }]}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Render with text', () => {
     render(
-      <FuncMessageList messages={[{ text: 'Render', author: 'Render' }]} />
+      <MessageList
+        messages={[{ id: '1', value: 'Render', author: 'Render' }]}
+      />
     );
     expect(screen.getByText(/Author: <\w*>/));
   });

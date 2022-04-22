@@ -3,11 +3,11 @@ body {
   font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+    background-color: black;
 }
 
 #root {
-  height: 929px;
+    display: flex;
 }
 
 code {
