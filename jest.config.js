@@ -79,6 +79,7 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.(css|less|scss)$': 'babel-jest',
     '\\.(css)$': 'identity-obj-proxy',
+    '^src/(.*)$': '<rootDir>/src/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

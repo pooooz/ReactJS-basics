@@ -8,7 +8,12 @@ export const Sidebar: FC = () => {
     <>
       <aside className={styles.sidebar}>
         <ul>
-          <li>
+          <li className={styles.sidebar_element}>
+            <NavLink className={styles.link} to="/profile">
+              Profile
+            </NavLink>
+          </li>
+          <li className={styles.sidebar_element}>
             <NavLink className={styles.link} to="/chats">
               Messages
             </NavLink>

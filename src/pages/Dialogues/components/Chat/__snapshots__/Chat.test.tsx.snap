@@ -5,16 +5,18 @@ exports[`Chat Empty message test 1`] = `
   <section>
     <div>
       <div>
-        <p
-          data-text="Test"
-        >
-          Test
-        </p>
-        <p
-          data-text="Author: <Test>"
-        >
-          Author: &lt;Test&gt;
-        </p>
+        <div>
+          <p
+            data-text="Test"
+          >
+            Test
+          </p>
+          <p
+            data-text="Author: <Test>"
+          >
+            Author: &lt;Test&gt;
+          </p>
+        </div>
       </div>
     </div>
     <form>
@@ -26,7 +28,7 @@ exports[`Chat Empty message test 1`] = `
       </div>
       <button
         class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
-        style="width: 100px; font-family: Press Start 2P; color: rgba(50, 205, 50, 1);"
+        style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"
       >
@@ -45,16 +47,18 @@ exports[`Chat Render with snapshot 1`] = `
   <section>
     <div>
       <div>
-        <p
-          data-text="Test"
-        >
-          Test
-        </p>
-        <p
-          data-text="Author: <Test>"
-        >
-          Author: &lt;Test&gt;
-        </p>
+        <div>
+          <p
+            data-text="Test"
+          >
+            Test
+          </p>
+          <p
+            data-text="Author: <Test>"
+          >
+            Author: &lt;Test&gt;
+          </p>
+        </div>
       </div>
     </div>
     <form>
@@ -66,7 +70,7 @@ exports[`Chat Render with snapshot 1`] = `
       </div>
       <button
         class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
-        style="width: 100px; font-family: Press Start 2P; color: rgba(50, 205, 50, 1);"
+        style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"
       >

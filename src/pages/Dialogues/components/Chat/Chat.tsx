@@ -3,7 +3,8 @@ import { Button, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
 import { MessageListPure } from './components/MessageList/MessageList';
-import { Input } from './components/Input/Input';
+import { WithClasses } from 'src/HOC/WithClasses';
+import { Input } from 'src/components/Input/Input';
 
 import { MessageInterface } from 'src/App';
 
@@ -35,10 +36,15 @@ export const Chat: FC<ChatProps> = (props) => {
     event.preventDefault();
   };
 
+  const MessageListPureWithClass = WithClasses(MessageListPure);
+
   return (
     <ThemeProvider theme={theme}>
       <section className={styles.dialogue}>
-        <MessageListPure messages={props.messages} />
+        <MessageListPureWithClass
+          messages={props.messages}
+          classes={styles.border}
+        />
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input value={inputValue} change={handleChange} />
           <Button
@@ -46,7 +52,6 @@ export const Chat: FC<ChatProps> = (props) => {
             type="submit"
             style={{
               width: '100px',
-              fontFamily: 'Press Start 2P',
               color: '#32CD32FF',
             }}
           >

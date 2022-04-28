@@ -9,11 +9,19 @@
   background-color: rgba(46, 66, 7, 0.1);
 }
 
+.sidebar_element {
+  margin: 10px 0 0 0;
+}
+
 .link {
   color: limegreen;
 }
 
 .main {
+  width: 100%;
+}
+
+.flex_wrap {
   width: 100%;
   min-height: 929px;
   display: flex;
