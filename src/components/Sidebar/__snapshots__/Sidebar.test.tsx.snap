@@ -7,6 +7,14 @@ exports[`Sidebar Render component 1`] = `
       <li>
         <a
           class=""
+          href="/profile"
+        >
+          Profile
+        </a>
+      </li>
+      <li>
+        <a
+          class=""
           href="/chats"
         >
           Messages

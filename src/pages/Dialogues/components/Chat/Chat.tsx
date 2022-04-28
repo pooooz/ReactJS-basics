@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 
 import { MessageListPure } from './components/MessageList/MessageList';
 import { WithClasses } from 'src/HOC/WithClasses';
-import { Input } from '../../../../components/Input/Input';
+import { Input } from 'src/components/Input/Input';
 
 import { MessageInterface } from 'src/App';
 
