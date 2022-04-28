@@ -2,19 +2,25 @@
 
 exports[`Sidebar Render component 1`] = `
 <DocumentFragment>
-  <aside>
+  <aside
+    class="sidebar"
+  >
     <ul>
-      <li>
+      <li
+        class="sidebar_element"
+      >
         <a
-          class=""
+          class="link"
           href="/profile"
         >
           Profile
         </a>
       </li>
-      <li>
+      <li
+        class="sidebar_element"
+      >
         <a
-          class=""
+          class="link"
           href="/chats"
         >
           Messages
@@ -22,6 +28,8 @@ exports[`Sidebar Render component 1`] = `
       </li>
     </ul>
   </aside>
-  <main />
+  <main
+    class="main"
+  />
 </DocumentFragment>
 `;

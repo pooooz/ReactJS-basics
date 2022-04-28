@@ -2,16 +2,26 @@
 
 exports[`Chat Empty message test 1`] = `
 <DocumentFragment>
-  <section>
-    <div>
-      <div>
-        <div>
+  <section
+    class="dialogue"
+  >
+    <div
+      class="border"
+    >
+      <div
+        class="message__list"
+      >
+        <div
+          class="message"
+        >
           <p
+            class="glitch"
             data-text="Test"
           >
             Test
           </p>
           <p
+            class="glitch"
             data-text="Author: <Test>"
           >
             Author: &lt;Test&gt;
@@ -19,15 +29,20 @@ exports[`Chat Empty message test 1`] = `
         </div>
       </div>
     </div>
-    <form>
-      <div>
+    <form
+      class="form"
+    >
+      <div
+        class="input_wrap"
+      >
         <input
+          class="input_green"
           type="text"
           value=""
         />
       </div>
       <button
-        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
         style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"
@@ -44,16 +59,26 @@ exports[`Chat Empty message test 1`] = `
 
 exports[`Chat Render with snapshot 1`] = `
 <DocumentFragment>
-  <section>
-    <div>
-      <div>
-        <div>
+  <section
+    class="dialogue"
+  >
+    <div
+      class="border"
+    >
+      <div
+        class="message__list"
+      >
+        <div
+          class="message"
+        >
           <p
+            class="glitch"
             data-text="Test"
           >
             Test
           </p>
           <p
+            class="glitch"
             data-text="Author: <Test>"
           >
             Author: &lt;Test&gt;
@@ -61,15 +86,20 @@ exports[`Chat Render with snapshot 1`] = `
         </div>
       </div>
     </div>
-    <form>
-      <div>
+    <form
+      class="form"
+    >
+      <div
+        class="input_wrap"
+      >
         <input
+          class="input_green"
           type="text"
           value=""
         />
       </div>
       <button
-        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
         style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"

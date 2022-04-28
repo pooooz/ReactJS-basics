@@ -2,8 +2,11 @@
 
 exports[`Input Render with snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="input_wrap"
+  >
     <input
+      class="input_green"
       type="text"
       value="Test"
     />

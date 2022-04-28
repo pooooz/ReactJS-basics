@@ -2,14 +2,20 @@
 
 exports[`MessageList Render with snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
+  <div
+    class="message__list"
+  >
+    <div
+      class="message"
+    >
       <p
+        class="glitch"
         data-text="Render"
       >
         Render
       </p>
       <p
+        class="glitch"
         data-text="Author: <Render>"
       >
         Author: &lt;Render&gt;

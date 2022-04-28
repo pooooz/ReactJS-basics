@@ -2,31 +2,45 @@
 
 exports[`ChatList test Adding an empty chat 1`] = `
 <DocumentFragment>
-  <aside>
-    <div>
+  <aside
+    class="chatList"
+  >
+    <div
+      class="chatHeader"
+    >
       Chats
     </div>
     <ul>
-      <li>
+      <li
+        class="chatItem"
+      >
         <a
-          class=""
+          class="link"
           href="/chats/initial"
         >
           initial
         </a>
-        <button>
+        <button
+          class="deleteButton"
+        >
           X
         </button>
       </li>
     </ul>
-    <form>
-      <div>
+    <form
+      class="form"
+    >
+      <div
+        class="inputWrap"
+      >
         <input
+          class="input"
           type="text"
           value=""
         />
       </div>
       <button
+        class="button"
         type="submit"
       >
         Add chat
