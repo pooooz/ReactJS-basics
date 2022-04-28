@@ -59,7 +59,7 @@ export const Profile: FC = () => {
                 }
                 onClick={() => dispatch(toggleProfile())}
               >
-                {visible ? 'true' : 'false'}
+                {visible ? 'Yes!' : 'No!'}
               </span>
             </div>
           </div>
