@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -122,12 +122,8 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,24 +136,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -165,11 +153,13 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,38 +182,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, FC } from 'react';
-import { Button, ThemeProvider } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
+import { Button } from '@mui/material';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 &nbsp;
 import { MessageListPure } from './components/MessageList/MessageList';
 import { WithClasses } from 'src/HOC/WithClasses';
 import { Input } from 'src/components/Input/Input';
-&nbsp;
-import { MessageInterface } from 'src/App';
+import { addMessage } from 'src/store/dialogues/actions';
+import { Navigate, useParams } from 'react-router-dom';
 &nbsp;
 import styles from './Chat.module.scss';
+import { selectChatList, selectChats } from 'src/store/dialogues/selectors';
 &nbsp;
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Press Start 2P',
-  },
-});
-&nbsp;
-interface ChatProps {
-  addMessage: (a: string) =&gt; void;
-  messages: MessageInterface[];
-}
-&nbsp;
-export const Chat: FC&lt;ChatProps&gt; = (props) =&gt; {
+export const Chat: FC = () =&gt; {
   const [inputValue, setInputValue] = useState&lt;string&gt;('');
-&nbsp;
+  const { chatId } = useParams();
+  const chats = useSelector(selectChats, shallowEqual);
+  const chatList = useSelector(selectChatList, shallowEqual);
+  const dispatch = useDispatch();
   const handleChange = (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
     setInputValue(event.target.value);
   };
 &nbsp;
   const handleSubmit = (event: React.FormEvent) =&gt; {
-    if (inputValue) {
-      props.addMessage(inputValue);
+    if (inputValue &amp;&amp; chatId) {
+      dispatch(addMessage(chatId, inputValue));
       setInputValue('');
     }
     event.preventDefault();
@@ -231,28 +214,30 @@ export const Chat: FC&lt;ChatProps&gt; = (props) =&gt; {
 &nbsp;
   const MessageListPureWithClass = WithClasses(MessageListPure);
 &nbsp;
+  if (!chatList.find((chat) =&gt; chat.name === chatId)) {
+    return &lt;Navigate replace to="/chats" /&gt;;
+  }
+&nbsp;
   return (
-    &lt;ThemeProvider theme={theme}&gt;
-      &lt;section className={styles.dialogue}&gt;
-        &lt;MessageListPureWithClass
-          messages={props.messages}
-          classes={styles.border}
-        /&gt;
-        &lt;form className={styles.form} onSubmit={handleSubmit}&gt;
-          &lt;Input value={inputValue} change={handleChange} /&gt;
-          &lt;Button
-            className={styles.form__button}
-            type="submit"
-            style={{
-              width: '100px',
-              color: '#32CD32FF',
-            }}
-          &gt;
-            Send
-          &lt;/Button&gt;
-        &lt;/form&gt;
-      &lt;/section&gt;
-    &lt;/ThemeProvider&gt;
+    &lt;section className={styles.dialogue}&gt;
+      &lt;MessageListPureWithClass
+        messages={chatId ? chats[chatId] : <span class="branch-1 cbranch-no" title="branch not covered" >[]}</span>
+        classes={styles.border}
+      /&gt;
+      &lt;form className={styles.form} onSubmit={handleSubmit}&gt;
+        &lt;Input value={inputValue} change={handleChange} /&gt;
+        &lt;Button
+          className={styles.form__button}
+          type="submit"
+          style={{
+            width: '100px',
+            color: '#32CD32FF',
+          }}
+        &gt;
+          Send
+        &lt;/Button&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
   );
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -262,7 +247,7 @@ export const Chat: FC&lt;ChatProps&gt; = (props) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Apr 28 2022 04:06:54 GMT+0300 (Москва, стандартное время)
+                at Sun May 01 2022 15:49:59 GMT+0300 (Москва, стандартное время)
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
