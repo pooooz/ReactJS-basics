@@ -2,68 +2,61 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import '@testing-library/user-event';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ChatList } from './ChatList';
+import { Provider } from 'react-redux';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
+import { store } from 'src/store';
+import { ChatList } from './ChatList';
 
 describe('ChatList test', () => {
-  const onAddChat = jest.fn();
-  const onDeleteChat = jest.fn();
   it('Render component', () => {
     const history = createMemoryHistory();
     render(
-      <Router location="/chats" navigator={history}>
-        <ChatList
-          chatList={[{ id: '1', name: 'initial' }]}
-          onAddChat={onAddChat}
-          onDeleteChat={onDeleteChat}
-        />
-      </Router>
+      <Provider store={store}>
+        <Router location="/chats" navigator={history}>
+          <ChatList />
+        </Router>
+      </Provider>
     );
   });
 
   it('Adding a chat', () => {
     const history = createMemoryHistory();
     render(
-      <Router location="/chats" navigator={history}>
-        <ChatList
-          chatList={[{ id: '1', name: 'initial' }]}
-          onAddChat={onAddChat}
-          onDeleteChat={onDeleteChat}
-        />
-      </Router>
+      <Provider store={store}>
+        <Router location="/chats" navigator={history}>
+          <ChatList />
+        </Router>
+      </Provider>
     );
     fireEvent.input(screen.getByRole('textbox'), {
-      target: { value: 'myChat' },
+      target: { value: 'initial' },
     });
-    fireEvent.click(screen.getByRole('button', { name: /Add chat/ }));
+    fireEvent.click(screen.getAllByRole('button', { name: /Add chat/ })[0]);
     expect(screen.getByText(/initial/)).toBeInTheDocument();
   });
 
   it('Deleting a chat', () => {
     const history = createMemoryHistory();
     render(
-      <Router location="/chats" navigator={history}>
-        <ChatList
-          chatList={[{ id: '1', name: 'initial' }]}
-          onAddChat={onAddChat}
-          onDeleteChat={onDeleteChat}
-        />
-      </Router>
+      <Provider store={store}>
+        <Router location="/chats" navigator={history}>
+          <ChatList />
+        </Router>
+      </Provider>
     );
-    fireEvent.click(screen.getByRole('button', { name: /X/ }));
+    fireEvent.click(screen.getAllByRole('button', { name: /X/ })[0]);
+    expect(() => screen.getByText(/default/)).toThrow();
   });
 
   it('Adding an empty chat', () => {
     const history = createMemoryHistory();
     const { asFragment } = render(
-      <Router location="/chats" navigator={history}>
-        <ChatList
-          chatList={[{ id: '1', name: 'initial' }]}
-          onAddChat={onAddChat}
-          onDeleteChat={onDeleteChat}
-        />
-      </Router>
+      <Provider store={store}>
+        <Router location="/chats" navigator={history}>
+          <ChatList />
+        </Router>
+      </Provider>
     );
     fireEvent.input(screen.getByRole('textbox'), {
       target: { value: '' },

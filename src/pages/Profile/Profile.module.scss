@@ -13,7 +13,7 @@
 }
 
 .profile_changeTheme {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive !important;
 }
 
 .profile_name {
@@ -29,7 +29,7 @@
 }
 
 .profile_changeNameButton {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive !important;
 }
 
 .profile_nameSection {
@@ -46,12 +46,20 @@
 }
 
 .profile_visibilityValuePositive {
+  font-family: 'Press Start 2P', cursive;
+  background: transparent;
+  border: none;
+  outline: none;
   cursor: pointer;
   text-decoration: underline;
   color: #0bb70b;
 }
 
 .profile_visibilityValueNegative {
+  font-family: 'Press Start 2P', cursive;
+  background: transparent;
+  border: none;
+  outline: none;
   cursor: pointer;
   text-decoration: underline;
   color: #500419;
