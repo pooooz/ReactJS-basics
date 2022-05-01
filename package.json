@@ -16,7 +16,7 @@
     "test": "tsc && jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
-    "chromatic": "npx chromatic --project-token=b94cab3f796d"
+    "chromatic": "npx chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
