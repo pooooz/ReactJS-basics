@@ -1,4 +1,5 @@
-import { AddChat, AddMessage, DeleteChat } from 'src/store/dialogues/types';
+import { AddChat, AddMessage, DeleteChat, Message } from './types';
+import { Dispatch } from 'redux';
 
 export const ADD_CHAT = 'DIALOGUES::ADD_CHAT';
 export const addChat: AddChat = (chatName) => ({
@@ -18,3 +19,25 @@ export const addMessage: AddMessage = (chatId, message) => ({
   chatId,
   message,
 });
+
+let timeout: NodeJS.Timeout;
+export const addMessageWithReply =
+  (chatId: string, message: Message) =>
+  (dispatch: Dispatch<ReturnType<AddMessage>>) => {
+    dispatch(addMessage(chatId, message));
+
+    if (message.author !== 'BOT') {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+
+      timeout = setTimeout(() => {
+        dispatch(
+          addMessage(chatId, {
+            text: 'Message',
+            author: 'BOT',
+          })
+        );
+      }, 1500);
+    }
+  };

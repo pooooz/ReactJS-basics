@@ -1,12 +1,15 @@
 import React, { useState, FC } from 'react';
 import { Button } from '@mui/material';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { Navigate, useParams } from 'react-router-dom';
 
 import { MessageListPure } from './components/MessageList/MessageList';
 import { WithClasses } from 'src/HOC/WithClasses';
 import { Input } from 'src/components/Input/Input';
-import { addMessage } from 'src/store/dialogues/actions';
-import { Navigate, useParams } from 'react-router-dom';
+import { addMessageWithReply } from 'src/store/dialogues/actions';
+import { ThunkDispatch } from 'redux-thunk';
+import { DialoguesState } from 'src/store/dialogues/reducer';
+import { AddMessage } from 'src/store/dialogues/types';
 
 import styles from './Chat.module.scss';
 import { selectChatList, selectChats } from 'src/store/dialogues/selectors';
@@ -16,14 +19,17 @@ export const Chat: FC = () => {
   const { chatId } = useParams();
   const chats = useSelector(selectChats, shallowEqual);
   const chatList = useSelector(selectChatList, shallowEqual);
-  const dispatch = useDispatch();
+  const dispatch =
+    useDispatch<ThunkDispatch<DialoguesState, void, ReturnType<AddMessage>>>();
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     if (inputValue && chatId) {
-      dispatch(addMessage(chatId, inputValue));
+      dispatch(
+        addMessageWithReply(chatId, { text: inputValue, author: 'You' })
+      );
       setInputValue('');
     }
     event.preventDefault();

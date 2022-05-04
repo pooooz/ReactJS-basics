@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import '@testing-library/jest-dom';
@@ -66,6 +66,25 @@ describe('Chat', () => {
     });
     fireEvent.click(screen.getByRole('button'));
     expect(screen.getByText(/Test/)).toBeInTheDocument();
+  });
+
+  it('Bot answer', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter initialEntries={['/chats/default']} initialIndex={0}>
+          <Routes>
+            <Route path="/chats/:chatId" element={<Chat />} />
+          </Routes>
+        </MemoryRouter>
+      </Provider>
+    );
+    fireEvent.input(screen.getByRole('textbox'), {
+      target: { value: 'Test' },
+    });
+    fireEvent.click(screen.getByRole('button'));
+    await waitFor(() => expect(screen.getByText(/BOT/)).toBeInTheDocument(), {
+      timeout: 1600,
+    });
   });
 
   it('Wrong route test', () => {
