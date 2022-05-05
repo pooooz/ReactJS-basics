@@ -68,25 +68,6 @@ describe('Chat', () => {
     expect(screen.getByText(/Test/)).toBeInTheDocument();
   });
 
-  it('Bot answer', async () => {
-    render(
-      <Provider store={store}>
-        <MemoryRouter initialEntries={['/chats/default']} initialIndex={0}>
-          <Routes>
-            <Route path="/chats/:chatId" element={<Chat />} />
-          </Routes>
-        </MemoryRouter>
-      </Provider>
-    );
-    fireEvent.input(screen.getByRole('textbox'), {
-      target: { value: 'Test' },
-    });
-    fireEvent.click(screen.getByRole('button'));
-    await waitFor(() => expect(screen.getByText(/BOT/)).toBeInTheDocument(), {
-      timeout: 1600,
-    });
-  });
-
   it('Wrong route test', () => {
     render(
       <Provider store={store}>

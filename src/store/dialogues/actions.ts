@@ -1,6 +1,8 @@
 import { AddChat, AddMessage, DeleteChat, Message } from './types';
 import { Dispatch } from 'redux';
 
+const API_KEY = 'b366f632159215c2582b9678b75c731a';
+
 export const ADD_CHAT = 'DIALOGUES::ADD_CHAT';
 export const addChat: AddChat = (chatName) => ({
   type: ADD_CHAT,
@@ -20,6 +22,41 @@ export const addMessage: AddMessage = (chatId, message) => ({
   message,
 });
 
+const getLocationTemperature = async (location: string) => {
+  const coordinatesResponse = await fetch(
+    `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${API_KEY}`
+  );
+
+  if (!coordinatesResponse.ok) {
+    return 'Connection error';
+  }
+
+  const coordinatesText = await coordinatesResponse.json();
+  console.log(coordinatesText);
+  if (coordinatesText.length) {
+    const locationCoordinates = {
+      lat: coordinatesText[0].lat,
+      lon: coordinatesText[0].lon,
+    };
+
+    const weatherResponse = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${locationCoordinates.lat}&lon=${locationCoordinates.lon}&appid=${API_KEY}`
+    );
+    if (weatherResponse.ok) {
+      const weatherText = await weatherResponse.json();
+      console.log(weatherText);
+      return `Recognized place: ${
+        weatherText.name
+      },\nTemperature in Celsius: ${(weatherText.main.temp - 273)
+        .toFixed(3)
+        .toString()}`;
+    } else {
+      return 'Unable to get temperature';
+    }
+  } else {
+    return 'Wrong place name';
+  }
+};
 let timeout: NodeJS.Timeout;
 export const addMessageWithReply =
   (chatId: string, message: Message) =>
@@ -31,10 +68,11 @@ export const addMessageWithReply =
         clearTimeout(timeout);
       }
 
-      timeout = setTimeout(() => {
+      timeout = setTimeout(async () => {
+        const temperatureCelsius = await getLocationTemperature(message.text);
         dispatch(
           addMessage(chatId, {
-            text: 'Message',
+            text: temperatureCelsius,
             author: 'BOT',
           })
         );
