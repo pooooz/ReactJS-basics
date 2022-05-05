@@ -22,7 +22,7 @@ export const addMessage: AddMessage = (chatId, message) => ({
   message,
 });
 
-const getLocationTemperature = async (location: string) => {
+const fetchLocationTemperature = async (location: string) => {
   const coordinatesResponse = await fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${API_KEY}`
   );
@@ -57,6 +57,7 @@ const getLocationTemperature = async (location: string) => {
     return 'Wrong place name';
   }
 };
+
 let timeout: NodeJS.Timeout;
 export const addMessageWithReply =
   (chatId: string, message: Message) =>
@@ -69,7 +70,7 @@ export const addMessageWithReply =
       }
 
       timeout = setTimeout(async () => {
-        const temperatureCelsius = await getLocationTemperature(message.text);
+        const temperatureCelsius = await fetchLocationTemperature(message.text);
         dispatch(
           addMessage(chatId, {
             text: temperatureCelsius,
