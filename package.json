@@ -1,5 +1,5 @@
 {
-  "name": "cra-test",
+  "name": "react-project",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://pooooz.github.io/ReactJS-basics/",
@@ -89,7 +89,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint && npm run test",
       "pre-push": "npm run test"
     }
   },
