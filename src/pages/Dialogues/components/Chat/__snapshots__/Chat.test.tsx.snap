@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chat Empty message test 1`] = `
+exports[`Chat Empty message sending 1`] = `
 <DocumentFragment>
   <section
     class="dialogue"
@@ -16,15 +16,15 @@ exports[`Chat Empty message test 1`] = `
         >
           <p
             class="glitch"
-            data-text="Test"
+            data-text="Initialization..."
           >
-            Test
+            Initialization...
           </p>
           <p
             class="glitch"
-            data-text="Author: <Test>"
+            data-text="Author: <Admin>"
           >
-            Author: &lt;Test&gt;
+            Author: &lt;Admin&gt;
           </p>
         </div>
       </div>
@@ -42,7 +42,7 @@ exports[`Chat Empty message test 1`] = `
         />
       </div>
       <button
-        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1e6y48t-MuiButtonBase-root-MuiButton-root"
         style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"
@@ -73,15 +73,15 @@ exports[`Chat Render with snapshot 1`] = `
         >
           <p
             class="glitch"
-            data-text="Test"
+            data-text="Initialization..."
           >
-            Test
+            Initialization...
           </p>
           <p
             class="glitch"
-            data-text="Author: <Test>"
+            data-text="Author: <Admin>"
           >
-            Author: &lt;Test&gt;
+            Author: &lt;Admin&gt;
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@ exports[`Chat Render with snapshot 1`] = `
         />
       </div>
       <button
-        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1t0zgcr-MuiButtonBase-root-MuiButton-root"
+        class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root form__button css-1e6y48t-MuiButtonBase-root-MuiButton-root"
         style="width: 100px; color: rgba(50, 205, 50, 1);"
         tabindex="0"
         type="submit"

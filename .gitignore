@@ -13,6 +13,8 @@ node_modules/
 
 # production
 build/
+storybook-static
+build-storybook.log
 
 # misc
 .DS_Store

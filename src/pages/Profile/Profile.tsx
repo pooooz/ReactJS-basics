@@ -3,7 +3,7 @@ import { ThemeContext } from 'src/utils/ThemeContext';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toggleProfile, changeName } from 'src/store/profile/actions';
-import { ProfileState } from 'src/store/profile/reducer';
+import { selectName, selectVisible } from 'src/store/profile/selectors';
 
 import { Button, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -21,14 +21,16 @@ export const Profile: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const dispatch = useDispatch();
 
-  const visible = useSelector((state: ProfileState) => state.visible);
-  const name = useSelector((state: ProfileState) => state.name);
+  const visible = useSelector(selectVisible);
+  const name = useSelector(selectName);
+
   const handleChangeName = () => {
     if (value) {
       dispatch(changeName(value));
     }
     setValue('');
   };
+
   return (
     <ThemeProvider theme={muiTheme}>
       <section className={styles.profile}>
@@ -51,7 +53,7 @@ export const Profile: FC = () => {
             <h3>Your name: {name}</h3>
             <div className={styles.profile_visibility}>
               Hide name in chat?
-              <span
+              <button
                 className={
                   visible
                     ? styles.profile_visibilityValuePositive
@@ -60,7 +62,7 @@ export const Profile: FC = () => {
                 onClick={() => dispatch(toggleProfile())}
               >
                 {visible ? 'Yes!' : 'No!'}
-              </span>
+              </button>
             </div>
           </div>
 

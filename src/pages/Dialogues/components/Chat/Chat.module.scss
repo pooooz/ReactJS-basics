@@ -1,4 +1,5 @@
 .dialogue {
+  font-family: 'Press Start 2P', cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +13,7 @@
 }
 
 .form__button {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive !important;
   background: transparent;
   color: limegreen;
   border: none;

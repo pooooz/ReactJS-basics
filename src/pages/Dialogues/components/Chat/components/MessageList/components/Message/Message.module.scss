@@ -1,12 +1,14 @@
 $text-color: grey;
 
 .glitch {
+  font-family: 'Press Start 2P', cursive;
   color: $text-color;
   position: relative;
   margin: 3px auto;
 }
 
 .message {
+  font-family: 'Press Start 2P', cursive;
   margin: 20px 0 0 0;
   word-wrap: break-word;
 }
@@ -21,6 +23,7 @@ $text-color: grey;
 }
 
 .glitch:before {
+  font-family: 'Press Start 2P', cursive;
   content: attr(data-text);
   position: absolute;
   left: -2px;
