@@ -3,9 +3,8 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { ProfileState } from 'src/store/profile/reducer';
 import { profileReducer } from 'src/store/profile/reducer';
-import { dialoguesReducer, DialoguesState } from 'src/store/dialogues/reducer';
+import { dialoguesReducer } from 'src/store/dialogues/reducer';
 
 declare global {
   interface Window {
