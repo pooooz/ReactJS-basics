@@ -32,7 +32,6 @@ const fetchLocationTemperature = async (location: string) => {
   }
 
   const coordinatesText = await coordinatesResponse.json();
-  console.log(coordinatesText);
   if (coordinatesText.length) {
     const locationCoordinates = {
       lat: coordinatesText[0].lat,
@@ -44,7 +43,6 @@ const fetchLocationTemperature = async (location: string) => {
     );
     if (weatherResponse.ok) {
       const weatherText = await weatherResponse.json();
-      console.log(weatherText);
       return `Recognized place: ${
         weatherText.name
       },\nTemperature in Celsius: ${(weatherText.main.temp - 273)
