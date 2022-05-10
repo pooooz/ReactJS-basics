@@ -44,8 +44,8 @@ export const dialoguesReducer: Reducer<DialoguesState, DialoguesActions> = (
           ...state[action.chatId],
           {
             id: nanoid(),
-            author: 'You',
-            text: action.message,
+            author: action.message.author,
+            text: action.message.text,
           },
         ],
       };
