@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
+const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 const withReport = process.env.npm_config_withReport;
@@ -99,8 +101,14 @@ module.exports = {
     maxAssetSize: 512000,
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed),
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
+      'process.env.NODE_ENV': JSON.stringify(
+        isDev ? 'development' : 'production'
+      ),
     }),
     ...(isDev
       ? [new MiniCssExtractPlugin()]
