@@ -3,7 +3,7 @@ import { defaultContext, ThemeContext } from 'src/utils/ThemeContext';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { AppRouter } from 'src/AppRouter';
+import { AppRouter } from 'src/components/AppRouter';
 import { store, persistor } from 'src/store';
 
 export const App: FC = () => {
