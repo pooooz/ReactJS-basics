@@ -38,36 +38,40 @@ const dialoguesSlice = createSlice({
 });
 
 const fetchLocationTemperatureString = async (location: string) => {
-  const coordinatesResponse = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${API_KEY}`
-  );
-
-  if (!coordinatesResponse.ok) {
-    return 'Connection error';
-  }
-
-  const coordinatesText = await coordinatesResponse.json();
-  if (coordinatesText.length) {
-    const locationCoordinates = {
-      lat: coordinatesText[0].lat,
-      lon: coordinatesText[0].lon,
-    };
-
-    const weatherResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${locationCoordinates.lat}&lon=${locationCoordinates.lon}&appid=${API_KEY}`
+  try {
+    const coordinatesResponse = await fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=${API_KEY}`
     );
-    if (weatherResponse.ok) {
-      const weatherText = await weatherResponse.json();
-      return `Recognized place: ${
-        weatherText.name
-      },\nTemperature in Celsius: ${(weatherText.main.temp - 273)
-        .toFixed(3)
-        .toString()}`;
-    } else {
-      return 'Unable to get temperature';
+
+    if (!coordinatesResponse.ok) {
+      return 'Connection error';
     }
-  } else {
-    return 'Wrong place name';
+
+    const coordinatesText = await coordinatesResponse.json();
+    if (coordinatesText.length) {
+      const locationCoordinates = {
+        lat: coordinatesText[0].lat,
+        lon: coordinatesText[0].lon,
+      };
+
+      const weatherResponse = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${locationCoordinates.lat}&lon=${locationCoordinates.lon}&appid=${API_KEY}`
+      );
+      if (weatherResponse.ok) {
+        const weatherText = await weatherResponse.json();
+        return `Recognized place: ${
+          weatherText.name
+        },\nTemperature in Celsius: ${(weatherText.main.temp - 273)
+          .toFixed(3)
+          .toString()}`;
+      } else {
+        return 'Unable to get temperature';
+      }
+    } else {
+      return 'Wrong place name';
+    }
+  } catch (error) {
+    return (error as Error).message;
   }
 };
 
