@@ -2,11 +2,11 @@ import React, { FC, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { Sidebar } from './Sidebar/Sidebar';
-import { Dialogue } from '../pages/Dialogues/Dialogue';
-import { Profile } from 'src/pages/Profile/Profile';
-import { ChatList } from '../pages/Dialogues/components/ChatList/ChatList';
-import { SignIn } from 'src/pages/SignIn/SignIn';
-import { SignUp } from 'src/pages/SignUp/SignUp';
+import { Dialogue } from 'pages/Dialogues/Dialogue';
+import { Profile } from 'pages/Profile/Profile';
+import { ChatList } from 'pages/Dialogues/components/ChatList/ChatList';
+import { SignIn } from 'pages/SignIn/SignIn';
+import { SignUp } from 'pages/SignUp/SignUp';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
