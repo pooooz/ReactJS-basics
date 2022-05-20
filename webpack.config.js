@@ -23,6 +23,7 @@ module.exports = {
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
     alias: {
       src: path.resolve(__dirname, 'src'),
+      pages: path.resolve(__dirname, 'src/pages'),
     },
   },
   devtool:

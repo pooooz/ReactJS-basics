@@ -2,7 +2,7 @@ import React, { FC, useContext, useState } from 'react';
 import { ThemeContext } from 'src/utils/ThemeContext';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { toggleProfile, changeName } from 'src/store/profile/actions';
+import { toggleProfile, changeName } from 'src/store/profile/slice';
 import { selectName, selectVisible } from 'src/store/profile/selectors';
 
 import { Button, ThemeProvider } from '@mui/material';
@@ -24,9 +24,10 @@ export const Profile: FC = () => {
   const visible = useSelector(selectVisible);
   const name = useSelector(selectName);
 
-  const handleChangeName = () => {
+  const handleChangeName = (event: React.FormEvent) => {
+    event.preventDefault();
     if (value) {
-      dispatch(changeName(value));
+      dispatch(changeName({ name: value }));
     }
     setValue('');
   };
@@ -66,13 +67,17 @@ export const Profile: FC = () => {
             </div>
           </div>
 
-          <div className={styles.profile_changeName}>
+          <form
+            className={styles.profile_changeName}
+            onSubmit={handleChangeName}
+          >
             <Input
               value={value}
               change={(event) => setValue(event.target.value)}
+              type="text"
             />
             <Button
-              onClick={handleChangeName}
+              type="submit"
               className={styles.profile_changeNameButton}
               style={{
                 width: '100px',
@@ -81,7 +86,7 @@ export const Profile: FC = () => {
             >
               Change name
             </Button>
-          </div>
+          </form>
         </section>
       </section>
     </ThemeProvider>
