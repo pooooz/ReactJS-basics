@@ -1,15 +1,19 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { update } from 'firebase/database';
+import { refUserById } from 'src/services/firebase';
 
 export interface ProfileState {
   auth: boolean;
   visible: boolean;
   name: string;
+  id: string;
 }
 
 const initialState: ProfileState = {
   auth: false,
   visible: true,
   name: 'Anonymous',
+  id: 'default',
 };
 
 const profileSlice = createSlice({
@@ -22,11 +26,23 @@ const profileSlice = createSlice({
     toggleProfile(state) {
       state.visible = !state.visible;
     },
-    changeName(state, action: PayloadAction<{ name: string }>) {
-      state.name = action.payload.name;
+    setName(state, action: PayloadAction<string>) {
+      state.name = action.payload;
+    },
+    setUserId(state, action: PayloadAction<string>) {
+      state.id = action.payload;
     },
   },
 });
 
-export const { changeAuth, toggleProfile, changeName } = profileSlice.actions;
+export const changeName = createAsyncThunk(
+  'profile/changeName',
+  async ({ userId, name }: { userId: string; name: string }) => {
+    update(refUserById(userId), { name });
+    setName(name);
+  }
+);
+
+export const { changeAuth, toggleProfile, setName, setUserId } =
+  profileSlice.actions;
 export const profileReducer = profileSlice.reducer;
