@@ -1,10 +1,9 @@
 import React, { FC, useState } from 'react';
 import { defaultContext, ThemeContext } from 'src/utils/ThemeContext';
 import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
 
-import { AppRouter } from 'src/components/AppRouter';
-import { store, persistor } from 'src/store';
+import { AppRouter } from './components/AppRouter';
+import { store } from 'src/store';
 
 export const App: FC = () => {
   const [theme, setTheme] = useState(defaultContext.theme);
@@ -16,9 +15,7 @@ export const App: FC = () => {
   return (
     <Provider store={store}>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <PersistGate persistor={persistor}>
-          <AppRouter />
-        </PersistGate>
+        <AppRouter />
       </ThemeContext.Provider>
     </Provider>
   );
